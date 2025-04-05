@@ -59,42 +59,57 @@ pip install llama-index-llms-ollama
 pip install llama-index-embeddings-huggingface
 pip install llama-index-llms-deepseek
 pip install llama-index-embeddings-ollama
+pip install llama-index-vector-stores-mongodb
 ```
 
 ## Usage
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/hritwij-shrivastava/rag-based-systems.git
-   cd rag-based-systems
-   ```
 
-2. Set up environment variables:
-   - Create a `.env` file in the root directory.
-   - Add the following variables:
-     ```plaintext
-     AWS_ACCESS_KEY=your_aws_access_key
-     AWS_SECRET_KEY=your_aws_secret_key
-     BUCKET_NAME=your_s3_bucket_name
-     OPENAI_API_KEY=your_openai_api_key
-     ```
+### Step 1: Clone the repository
+Clone the repository and navigate to the project directory:
+```bash
+git clone https://github.com/hritwij-shrivastava/rag-based-systems.git
+cd rag-based-systems
+```
 
-3. Run the desired script:
-   - For OpenAI-based RAG:
-     ```bash
-     python open_ai_rag.py
-     ```
-   - For Ollama-based RAG:
-     ```bash
-     python ollama_ai_rag.py
-     ```
-   - For DeepSeek-based RAG:
-     ```bash
-     python deepseek_ai_rag.py
-     ```
+### Step 2: Set up environment variables
+Create a `.env` file in the root directory and add the following variables:
+```plaintext
+AWS_ACCESS_KEY=your_aws_access_key
+AWS_SECRET_KEY=your_aws_secret_key
+BUCKET_NAME=your_s3_bucket_name
+OPENAI_API_KEY=your_openai_api_key
+LLM_MODEL="openai-gpt3"
+MONGO_URI=""
+MONGO_DB_NAME=""
+MONGO_COLLECTION_NAME=""
+FILE_NAME=""
+HUGGINGFACE_TOKEN=""
+ENV="" # "train" or "prod"
+```
+
+### Step 3: Run the desired script
+Run one of the following scripts based on your use case:
+- For OpenAI-based RAG:
+  ```bash
+  python open_ai_rag.py
+  ```
+- For OpenAI RAG with MongoDB:
+  ```bash
+  python open_ai_rag_with_mongodb.py
+  ```
+- For Ollama-based RAG:
+  ```bash
+  python ollama_ai_rag.py
+  ```
+- For DeepSeek-based RAG:
+  ```bash
+  python deepseek_ai_rag.py
+  ```
 
 ## Notes
 - Ensure that the required LLMs (e.g., Ollama or DeepSeek) are running locally or accessible via the specified endpoints.
 - Modify the `FILE_NAME` and `STORAGE_PATH` variables in the scripts as needed.
+- Use the appropriate `.env` configuration for your environment (e.g., "train" or "prod").
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
