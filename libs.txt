@@ -1,0 +1,19 @@
+pip install boto3
+pip install pandas
+pip install torch
+pip install matplotlib
+pip install llama-index
+pip install transformers
+pip install openai
+pip install python-dotenv
+
+
+pip install llama-index qdrant_client torch transformers 
+pip install llama-index-llms-ollama
+
+pip install llama-index-embeddings-huggingface
+
+
+pip install llama-index-llms-deepseek
+
+pip install llama-index-embeddings-ollama
